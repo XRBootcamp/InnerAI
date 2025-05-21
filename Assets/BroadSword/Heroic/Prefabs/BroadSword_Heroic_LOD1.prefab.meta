@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ba3b93420cf28e848b3f0c40e54e203f
+timeCreated: 1476993815
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 74280
+  packageName: Heroic Broad Sword
+  packageVersion: 1.1
+  assetPath: Assets/BroadSword/Heroic/Prefabs/BroadSword_Heroic_LOD1.prefab
+  uploadId: 147027
