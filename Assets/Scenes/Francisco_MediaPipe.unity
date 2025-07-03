@@ -448,6 +448,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2106046117381357938, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106046117381357938, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106046117381357938, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106046117381357938, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523061568833179, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523061568833179, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523061568833179, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523061568833179, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523062918819613, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523062918819613, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523062918819613, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197523062918819613, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4105454312449731592, guid: 40cf69b26f9fe36448dcc8c3e2e82f4d, type: 3}
       propertyPath: m_Name
       value: OVRCameraRig
