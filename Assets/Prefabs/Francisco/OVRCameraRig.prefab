@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 12920df4-450f-4b20-913b-2cbe150810d0
+  instanceId: f07d534c-9b75-4b0e-ab16-8de511152f70
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: b641e9fc-6d4e-4e3d-9ba2-718f04b944fc
+  instanceId: 2761f614-3e71-4e55-9a63-27e68a9cd124
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: a9dbaba1-6491-4fcb-b187-ce44bbffb537
+  instanceId: ac358496-206b-4456-b816-11b7880be3bb
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -3361,6 +3361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211130152556389706}
   - component: {fileID: 5001803705136737543}
+  - component: {fileID: 6541967433414407219}
   m_Layer: 0
   m_Name: LeftEyeAnchor
   m_TagString: MainCamera
@@ -3434,6 +3435,50 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &6541967433414407219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7434974215336935554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &7699523441680211682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5252,7 +5297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 81f55626-5fad-45e9-a1df-184f330da7ba
-  instanceId: efe1e823-cb24-4918-a79a-7c8049f1894f
+  instanceId: 795a2251-fb23-484e-b51c-8b323807b8ff
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -5444,7 +5489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6133060009216628849, guid: c3ca3e2f2b8ebd2418c371f0d8fa25f6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6133060009216628849, guid: c3ca3e2f2b8ebd2418c371f0d8fa25f6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5452,7 +5497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6133060009216628849, guid: c3ca3e2f2b8ebd2418c371f0d8fa25f6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6133060009216628849, guid: c3ca3e2f2b8ebd2418c371f0d8fa25f6, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5472,7 +5517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6133060009216628849, guid: c3ca3e2f2b8ebd2418c371f0d8fa25f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6133060009216628849, guid: c3ca3e2f2b8ebd2418c371f0d8fa25f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6125,7 +6170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 0393ca30-f2a9-4865-a40f-f9a68d01c3a9
-  instanceId: 685fe6cc-980a-41ff-9061-065cd3a75c16
+  instanceId: 3a5d9911-2767-4678-9d64-b56cac1e74f8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
