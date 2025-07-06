@@ -7,6 +7,7 @@ public class PoseDetectionSequence : MonoBehaviour
     [SerializeField] private Counter counter;
     private int currentPoseIndex = 0;
     private int completedPoses = 0;
+    private bool isPoseCompleted = false;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class PoseDetectionSequence : MonoBehaviour
             if (currentPoseIndex < poses.Length && pose.poseDetector == poses[currentPoseIndex].poseDetector)
             {
                 pose.poseDetector.transform.parent.gameObject.SetActive(true);
-                pose.poseDetector._poseEvents.OnCompliance.AddListener(OnPoseCompliance);
+                isPoseCompleted = false;
             }
             else
             {
@@ -30,9 +31,10 @@ public class PoseDetectionSequence : MonoBehaviour
         }
     }
 
-    private void OnPoseCompliance()
+    public void OnPoseCompliance()
     {
-        poses[currentPoseIndex].poseDetector._poseEvents.OnCompliance.RemoveListener(OnPoseCompliance);
+        if (isPoseCompleted) return;
+        isPoseCompleted = true;
         currentPoseIndex++;
         SetActivePose();
         completedPoses++;
@@ -63,6 +65,7 @@ public class PoseDetectionSequence : MonoBehaviour
         SetActivePose();
         Debug.Log("Pose sequence started.");
     }
+    
 }
 
 [System.Serializable]
