@@ -22,6 +22,7 @@ namespace PassthroughCameraSamples
         /// Returns <see cref="WebCamTexture"/> reference if required permissions were granted and this component is enabled. Else, returns null.
         /// </summary>
         public static WebCamTexture WebCamTexture { get; private set; }
+        //public WebCamTexture WebCamTexture { get; private set; }
 
         private bool m_hasPermission;
 
