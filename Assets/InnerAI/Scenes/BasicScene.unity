@@ -5060,7 +5060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2494f2645a6d64448d8913ed6628a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lagTime: 0.125
+  lagTime: 0.05
   controllerTransform: {fileID: 551589251}
 --- !u!1 &730015844
 GameObject:
@@ -7030,7 +7030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2494f2645a6d64448d8913ed6628a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lagTime: 0.125
+  lagTime: 0.05
   controllerTransform: {fileID: 551589251}
 --- !u!1 &1090484703
 GameObject:
@@ -12211,7 +12211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2555691040b8ee94083b811ca4bbe21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lagTime: 0.125
+  lagTime: 0.05
   controllerTransform: {fileID: 1471528573}
 --- !u!1 &2069973771
 GameObject:
