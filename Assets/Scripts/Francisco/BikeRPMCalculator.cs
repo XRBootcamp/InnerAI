@@ -5,7 +5,6 @@ public class BikeRPMCalculator : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text displayRPMText;
     [SerializeField] private float movementThreshold = 0.03f; // Min Y-change to register movement
-    [SerializeField] private float minSpeedForRPM = 0.1f; // Min foot speed to count as pedaling
     [SerializeField] private int smoothingFrames = 5; // Number of frames for averaging jitter
 
     private float leftFootLastLowestY;
