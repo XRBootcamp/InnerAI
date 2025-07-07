@@ -338,7 +338,7 @@ MonoBehaviour:
   PrependedText: 
   AppendedText: 
   _ttsService: {fileID: 0}
-  presetVoiceID: WIT$BRITISH BUTLER
+  presetVoiceID: WIT$REBECCA
   customWitVoiceSettings:
     SettingsId: 
     PrependedText: 
