@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77c0fe66c705c541ada54398115658d, type: 3}
+  m_Name: UIThemeCustomBrandExampleInnerAI
+  m_EditorClassIdentifier: 
+  _themeVersion: 2
+  backplateColor: {r: 0.18039216, g: 0.29411766, b: 0.3019608, a: 1}
+  backplateGradientMaterial: {fileID: 2100000, guid: 1ba520711c07df146acd43e06d6e0ade, type: 2}
+  buttonPlateColor: {r: 0, g: 0, b: 0, a: 0.078431375}
+  sectionPlateColor: {r: 0.2013171, g: 0.33333334, b: 0.34901962, a: 1}
+  tooltipColor: {r: 0.9098039, g: 0.7647059, b: 0.48235297, a: 1}
+  textPrimaryColor: {r: 0.94509804, g: 0.95686275, b: 0.96862745, a: 1}
+  textSecondaryColor: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
+  textPrimaryInvertedColor: {r: 0, g: 0, b: 0, a: 1}
+  textSecondaryInvertedColor: {r: 0, g: 0, b: 0, a: 0.69803923}
+  primaryButton:
+    normal: {r: 0.69803923, g: 0.5529412, b: 0.3764706, a: 1}
+    highlighted: {r: 0.83137256, g: 0.7137255, b: 0.5647059, a: 1}
+    pressed: {r: 0.8117647, g: 0.65882355, b: 0.46666667, a: 1}
+    selected: {r: 0.80784315, g: 0.56078434, b: 0.26666668, a: 1}
+    disabled: {r: 0.40784314, g: 0.34901962, b: 0.26666668, a: 1}
+  secondaryButton:
+    normal: {r: 0.69803923, g: 0.5529412, b: 0.3764706, a: 1}
+    highlighted: {r: 0.83137256, g: 0.7137255, b: 0.5647059, a: 1}
+    pressed: {r: 0.8117647, g: 0.65882355, b: 0.46666667, a: 1}
+    selected: {r: 0.80784315, g: 0.56078434, b: 0.26666668, a: 1}
+    disabled: {r: 0.40784314, g: 0.34901962, b: 0.26666668, a: 1}
+  borderlessButton:
+    normal: {r: 0.69803923, g: 0.5529412, b: 0.3764706, a: 0}
+    highlighted: {r: 0.83137256, g: 0.7137255, b: 0.5647059, a: 1}
+    pressed: {r: 0.8117647, g: 0.65882355, b: 0.46666667, a: 1}
+    selected: {r: 0.80784315, g: 0.56078434, b: 0.26666668, a: 1}
+    disabled: {r: 0.40784314, g: 0.34901962, b: 0.26666668, a: 1}
+  destructiveButton:
+    normal: {r: 0.6666667, g: 0.039215688, b: 0.11764707, a: 1}
+    highlighted: {r: 0.69803923, g: 0.13333334, b: 0.20392159, a: 1}
+    pressed: {r: 0.73333335, g: 0.23137257, b: 0.29411766, a: 1}
+    selected: {r: 0.6666667, g: 0.039215688, b: 0.11764707, a: 1}
+    disabled: {r: 0.3254902, g: 0.12941177, b: 0.18823531, a: 1}
+  textFontBold: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  textFontMedium: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  textFontRegular: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  acPrimaryButton: {fileID: 9100000, guid: 19573721eecd087499e0d1a2949546d6, type: 2}
+  acSecondaryButton: {fileID: 9100000, guid: 9bb46c758333f704ab72814b82ce8574, type: 2}
+  acBorderlessButton: {fileID: 9100000, guid: 03c1787bd17e72240b8d850aaa1b48e5, type: 2}
+  acDestructiveButton: {fileID: 9100000, guid: e3e153ae695632e498a04a853c7a1754, type: 2}
+  acToggleButton: {fileID: 9100000, guid: f027ccad58bd5b747b4ddbef99d6c31d, type: 2}
+  acToggleBorderlessButton: {fileID: 9100000, guid: e378d53a10078214da71684a53df6a0e, type: 2}
+  acToggleSwitch: {fileID: 9100000, guid: dbdf6d880cce844429bce6b8aa87c073, type: 2}
+  acToggleCheckboxRadio: {fileID: 9100000, guid: 12afed7dced92ef46a2b5b6d9c0fe738, type: 2}
+  acTextInputField: {fileID: 9100000, guid: c9d37af0e8ecfae4380c0a51dc88e224, type: 2}
+  colorPath: Content/Background
