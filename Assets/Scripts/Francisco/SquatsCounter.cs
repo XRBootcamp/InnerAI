@@ -1,8 +1,19 @@
 using System;
+using Meta.WitAi.TTS.Utilities;
 using UnityEngine;
 
 public class SquatsCounter : MonoBehaviour
 {
+    [SerializeField] private TTSSpeaker ttsSpeaker;
+    [SerializeField] private MotivationalMessages motivationalMessages;
+    [SerializeField] private ParticleSystem sequenceCompletedParticles;
+    [SerializeField] private int sequenceRepetitions = 5;
+    [SerializeField] private string[] ttsOnSequenceRepetitionsCompleted = new string[]
+    {
+        "Great job! You completed the exercise!",
+        "Well done! You've finished the sequence!",
+        "Fantastic! You've completed the exercise sequence!",
+    };
     [SerializeField] private TMPro.TMP_Text displaySquatsText;
 
     [SerializeField]
@@ -13,19 +24,26 @@ public class SquatsCounter : MonoBehaviour
 
     private bool isSquatting = false;
     private int squatCount = 0;
+    private bool hasFinishedSequence;
 
     void Start()
     {
         SetCounter();
+        if (ttsSpeaker)
+        {
+            ttsSpeaker.Speak("Let's start the squats exercise. Lower your body down.");
+        }
     }
 
     private void SetCounter()
     {
-        if (displaySquatsText) displaySquatsText.text = $"Squats: {squatCount}";
+        string squatsText = sequenceRepetitions == 0 ? squatCount.ToString() : $"{squatCount}/{sequenceRepetitions}";
+        if (displaySquatsText) displaySquatsText.text = squatsText;
     }
 
     private void Update()
     {
+        if (hasFinishedSequence) return;
         if (!MediaPipeBodyController.Instance.MediaPipeTransformPointsParent) return;
 
         // Get hand and knee positions
@@ -47,6 +65,7 @@ public class SquatsCounter : MonoBehaviour
                              rightHandToKneeDistance <= squatDownDistanceThreshold))
         {
             isSquatting = true;
+            if (ttsSpeaker) ttsSpeaker.Speak("Body up!");
         }
 
         // Check if standing up
@@ -56,6 +75,17 @@ public class SquatsCounter : MonoBehaviour
             isSquatting = false;
             squatCount++;
             SetCounter();
+            motivationalMessages.ShowMessage();
+            if (squatCount >= sequenceRepetitions)
+            {
+                if (sequenceCompletedParticles) sequenceCompletedParticles.Play();
+                ttsSpeaker.Speak(ttsOnSequenceRepetitionsCompleted[UnityEngine.Random.Range(0, ttsOnSequenceRepetitionsCompleted.Length)]);
+                hasFinishedSequence = true;
+            }
+            else
+            {
+                if (ttsSpeaker) ttsSpeaker.Speak("Body down!");
+            }
         }
     }
 }
