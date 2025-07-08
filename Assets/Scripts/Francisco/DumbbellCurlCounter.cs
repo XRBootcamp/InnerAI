@@ -1,7 +1,21 @@
+using System;
+using Meta.WitAi.TTS.Utilities;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DumbbellCurlCounter : MonoBehaviour
 {
+    [SerializeField] private TTSSpeaker ttsSpeaker;
+    [SerializeField] private MotivationalMessages motivationalMessages;
+    [SerializeField] private ParticleSystem sequenceCompletedParticles;
+    [SerializeField] private int sequenceRepetitions = 5;
+    [SerializeField] private string[] ttsOnSequenceRepetitionsCompleted = new string[]
+    {
+        "Great job! You completed the exercise!",
+        "Well done! You've finished the sequence!",
+        "Fantastic! You've completed the exercise sequence!",
+    };
+    
     [Header("Movement Detection")] [SerializeField]
     private float movementThreshold = 0.03f; // Minimum Y-change to register movement
 
@@ -12,9 +26,16 @@ public class DumbbellCurlCounter : MonoBehaviour
     [SerializeField] private bool repInProgress;
     [SerializeField] private TMPro.TMP_Text repCountText; // UI Text to display rep count
 
+    private bool hasFinishedSequence;
+
+    private void Start()
+    {
+        if (ttsSpeaker) ttsSpeaker.Speak("Let's start the biceps curl exercise. Low your arm.");
+    }
 
     private void Update()
     {
+        if (hasFinishedSequence) return;
         if (!MediaPipeBodyController.Instance.MediaPipeTransformPointsParent) return;
         Vector3 rightShoulderPos =
             MediaPipeBodyController.Instance.MediaPipeTransformPointsParent.GetChild(11).position; // Right shoulder
@@ -33,7 +54,19 @@ public class DumbbellCurlCounter : MonoBehaviour
                 isMovingUp = false;
                 repInProgress = false;
                 totalReps++;
-                repCountText.text = totalReps.ToString();
+                string repsText = sequenceRepetitions == 0 ? totalReps.ToString() : $"{totalReps}/{sequenceRepetitions}";
+                repCountText.text = repsText;
+                motivationalMessages.ShowMessage();
+                if (totalReps >= sequenceRepetitions)
+                {
+                    if (sequenceCompletedParticles) sequenceCompletedParticles.Play();
+                    ttsSpeaker.Speak(ttsOnSequenceRepetitionsCompleted[Random.Range(0, ttsOnSequenceRepetitionsCompleted.Length)]);
+                    hasFinishedSequence = true;
+                }
+                else
+                {
+                    ttsSpeaker.Speak("Arm down!");
+                }
             }
         }
         else
@@ -44,6 +77,7 @@ public class DumbbellCurlCounter : MonoBehaviour
             {
                 repInProgress = true;
                 isMovingUp = true;
+                if (ttsSpeaker) ttsSpeaker.Speak("Arm up!");
             }
         }
     }
