@@ -10979,10 +10979,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7466530270995979436, guid: c55d681cef85f384ea38c4abaf77616c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55d681cef85f384ea38c4abaf77616c, type: 3}
 --- !u!114 &573366085 stripped
 MonoBehaviour:
@@ -11262,7 +11259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &594415535
 Transform:
   m_ObjectHideFlags: 0

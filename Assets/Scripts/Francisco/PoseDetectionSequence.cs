@@ -1,6 +1,9 @@
+using System;
+using System.Collections;
 using Meta.WitAi.TTS.Utilities;
 using Meta.XR.Movement.BodyTrackingForFitness;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PoseDetectionSequence : MonoBehaviour
 {
@@ -22,36 +25,65 @@ public class PoseDetectionSequence : MonoBehaviour
     private int completedPoses;
     private bool isPoseCompleted;
     private int currentSequenceRepetitions = 0;
-    private float timer;
     private bool isSequenceOver;
-
+    private Coroutine poseVerificationCoroutine;
+    private bool switchingPose;
+    private float timeSinceLastPoseChange;
     void Start()
     {
         if (poses == null || poses.Length == 0) return;
         StartSequence();
     }
 
+    private void Update()
+    {
+        timeSinceLastPoseChange += Time.deltaTime;
+    }
+
     private void SetActivePose()
     {
+        switchingPose = true;
         foreach (var pose in poses)
         {
             if (!isSequenceOver && currentPoseIndex < poses.Length && pose.poseDetector == poses[currentPoseIndex].poseDetector)
             {
                 pose.poseDetector.transform.parent.gameObject.SetActive(true);
                 isPoseCompleted = false;
-                ttsSpeaker.Speak(pose.ttsInstructionMessage);
+                string instructionMessage = pose.minTimeInPose == 0 ? pose.ttsInstructionMessage : $"{pose.ttsInstructionMessage} and hold for {pose.minTimeInPose} seconds.";
+                ttsSpeaker.Speak(instructionMessage);
             }
             else
             {
                 pose.poseDetector.transform.parent.gameObject.SetActive(false);
             }
         }
+        switchingPose = false;
     }
 
     public void OnPoseCompliance()
     {
         if (isPoseCompleted) return;
         isPoseCompleted = true;
+        poseVerificationCoroutine = StartCoroutine(StartPoseVerification());
+    }
+    
+    public void OnPoseDefiance()
+    {
+        if (poses[currentPoseIndex].minTimeInPose == 0 || switchingPose || timeSinceLastPoseChange < 1f) return;
+        if (poseVerificationCoroutine != null)
+        {
+            StopCoroutine(poseVerificationCoroutine);
+            poseVerificationCoroutine = null;
+        }
+        isPoseCompleted = false;
+        string instructionMessage = $"You didn't hold enough. {poses[currentPoseIndex].ttsInstructionMessage} and hold for {poses[currentPoseIndex].minTimeInPose} seconds.";
+        ttsSpeaker.Speak(instructionMessage);
+    }
+
+    private IEnumerator StartPoseVerification()
+    {
+        yield return new WaitForSeconds(poses[currentPoseIndex].minTimeInPose);
+        timeSinceLastPoseChange = 0f;
         currentPoseIndex++;
         SetActivePose();
         completedPoses++;
