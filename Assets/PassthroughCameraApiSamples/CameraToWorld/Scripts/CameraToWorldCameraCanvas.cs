@@ -58,5 +58,10 @@ namespace PassthroughCameraSamples.CameraToWorld
                 m_debugText.text = "No permission granted.";
             }
         }
+
+        public void ToggleDebugText()
+        {
+            m_debugText.enabled = !m_debugText.enabled;
+        }
     }
 }
