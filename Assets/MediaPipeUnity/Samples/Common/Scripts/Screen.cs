@@ -32,7 +32,7 @@ namespace Mediapipe.Unity
 
       Resize(_imageSource.textureWidth, _imageSource.textureHeight);
       Rotate(_imageSource.rotation.Reverse());
-      ResetUvRect(RunningMode.Async);
+      // ResetUvRect(RunningMode.Async);
       texture = imageSource.GetCurrentTexture();
     }
 
