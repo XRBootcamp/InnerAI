@@ -22,15 +22,6 @@ EditorBuildSettings:
     path: Assets/MediaPipeUnity/Samples/Scenes/Legacy/Holistic/Holistic.unity
     guid: 530502d398830609297010a1521c815f
   - enabled: 0
-    path: Assets/Scenes/Richard_Detection.unity
-    guid: ed4f2df82810d6f4ea93d9160450fbab
-  - enabled: 0
-    path: Assets/Scenes/Richard_Detection_2.unity
-    guid: 5e7eea7ebf3dd034fa82b551e1674338
-  - enabled: 0
-    path: Assets/Scenes/Richard_Detection_3.unity
-    guid: 5da3f5ffca48e194595e0e7e8b1afa9c
-  - enabled: 0
     path: Assets/PassthroughCameraApiSamples/CameraToWorld/CameraToWorld.unity
     guid: 756785b371a4f49438b7e2148816e892
   - enabled: 0
