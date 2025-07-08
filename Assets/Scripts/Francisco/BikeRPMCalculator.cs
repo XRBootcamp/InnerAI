@@ -8,8 +8,8 @@ using UnityEngine;
         [SerializeField] private MotivationalMessages motivationalMessages;
         [SerializeField] private ParticleSystem sequenceCompletedParticles;
         [SerializeField] private int sequenceDuration = 20;
-        [SerializeField] private int rpmMinTarget = 100;
-        [SerializeField] private int rpmMaxTarget = 300;
+        [SerializeField] private int rpmMinTarget = 60;
+        [SerializeField] private int rpmMaxTarget = 200;
         [SerializeField] private string[] ttsOnSequenceRepetitionsCompleted = new string[]
         {
             "Great job! You completed the exercise!",
@@ -20,7 +20,6 @@ using UnityEngine;
         [SerializeField] private TMPro.TMP_Text timeDurationDisplay;
         [SerializeField] private TMPro.TMP_Text displayRPMText;
         [SerializeField] private float movementThreshold = 0.03f;
-        [SerializeField] private int smoothingFrames = 5;
     
         private float rightFootLastLowestY;
         private int rightFootRevolutions;
@@ -28,8 +27,6 @@ using UnityEngine;
         private float rpm;
         private bool rightFootGoingUp;
     
-        private float[] rightFootBuffer;
-        private int bufferIndex;
         private float timeSinceLastTTS;
         private bool hasFinishedSequence;
         
@@ -37,7 +34,6 @@ using UnityEngine;
     
         private void Start()
         {
-            rightFootBuffer = new float[smoothingFrames];
             ttsSpeaker.Speak($"Let's start the cycling exercise. Keep pedaling for {sequenceDuration} seconds.");
         }
     
@@ -48,12 +44,11 @@ using UnityEngine;
             Vector3 rightFootPos =
                 MediaPipeBodyController.Instance.MediaPipeTransformPointsParent.GetChild(28).position;
     
-            float smoothedRightY = SmoothValue(rightFootPos.y, rightFootBuffer, ref bufferIndex);
             timer += Time.deltaTime;
     
-            if (IsFootMoving(smoothedRightY, rightFootLastLowestY))
+            if (IsFootMoving(rightFootPos.y, rightFootLastLowestY))
             {
-                CheckFootRevolution(ref smoothedRightY, ref rightFootLastLowestY, ref rightFootRevolutions, ref rightFootGoingUp);
+                CheckFootRevolution(ref rightFootPos.y, ref rightFootLastLowestY, ref rightFootRevolutions, ref rightFootGoingUp);
             }
             CountTime();
             if (CheckSequenceTime()) return;
@@ -108,18 +103,6 @@ using UnityEngine;
                 return true;
             }
             return false;
-        }
-
-        private float SmoothValue(float newValue, float[] buffer, ref int index)
-        {
-            buffer[index % smoothingFrames] = newValue;
-            index++;
-            float sum = 0f;
-            for (int i = 0; i < smoothingFrames; i++)
-            {
-                sum += buffer[i];
-            }
-            return sum / smoothingFrames;
         }
     
         private bool IsFootMoving(float currentY, float lastY)

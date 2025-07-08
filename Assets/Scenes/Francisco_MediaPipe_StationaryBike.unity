@@ -5865,6 +5865,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 924037404}
     - target: {fileID: 2765279340836968348, guid: 66b363b449715ce48bff567230fb37ab, type: 3}
+      propertyPath: rpmMaxTarget
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765279340836968348, guid: 66b363b449715ce48bff567230fb37ab, type: 3}
       propertyPath: displayRPMText
       value: 
       objectReference: {fileID: 4971565319611713058}
@@ -5873,8 +5877,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2765279340836968348, guid: 66b363b449715ce48bff567230fb37ab, type: 3}
+      propertyPath: sequenceDuration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765279340836968348, guid: 66b363b449715ce48bff567230fb37ab, type: 3}
       propertyPath: movementThreshold
-      value: 0.02
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2765279340836968348, guid: 66b363b449715ce48bff567230fb37ab, type: 3}
       propertyPath: timeDurationDisplay
