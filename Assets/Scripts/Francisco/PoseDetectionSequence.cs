@@ -9,7 +9,13 @@ public class PoseDetectionSequence : MonoBehaviour
     [SerializeField] private MotivationalMessages motivationalMessages;
     [SerializeField] private TTSSpeaker ttsSpeaker;
     [SerializeField] private int sequenceRepetitions = 0;
-    [SerializeField] private string ttsOnSequenceRepetitionsCompleted = "Great job! You completed the exercise!";
+    [SerializeField] private ParticleSystem sequenceCompletedParticles;
+    [SerializeField] private string[] ttsOnSequenceRepetitionsCompleted = new string[]
+    {
+        "Great job! You completed the exercise!",
+        "Well done! You've finished the sequence!",
+        "Fantastic! You've completed the exercise sequence!",
+    };
 
     
     private int currentPoseIndex;
@@ -61,7 +67,8 @@ public class PoseDetectionSequence : MonoBehaviour
             else
             {
                 isSequenceOver = true;
-                ttsSpeaker?.Speak(ttsOnSequenceRepetitionsCompleted);
+                sequenceCompletedParticles.Play();
+                ttsSpeaker?.Speak(ttsOnSequenceRepetitionsCompleted[Random.Range(0, ttsOnSequenceRepetitionsCompleted.Length)]);
                 SetActivePose();
             }
         }

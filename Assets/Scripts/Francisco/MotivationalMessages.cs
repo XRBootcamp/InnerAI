@@ -4,6 +4,7 @@ public class MotivationalMessages : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text motivationalMessage;
     [SerializeField] private Animation motivationalMessageAnimation;
+    [SerializeField] private ParticleSystem motivationalMessageParticles;
     [SerializeField] private string[] motivationalMessages = new string[]
     {
         "WELL DONE!",
@@ -17,6 +18,13 @@ public class MotivationalMessages : MonoBehaviour
 
         motivationalMessage.text = motivationalMessages[Random.Range(0, motivationalMessages.Length)];
         motivationalMessageAnimation.Play();
+    }
+    public void ShowParticles()
+    {
+        if (motivationalMessageParticles != null)
+        {
+            motivationalMessageParticles.Play();
+        }
     }
     
 }
