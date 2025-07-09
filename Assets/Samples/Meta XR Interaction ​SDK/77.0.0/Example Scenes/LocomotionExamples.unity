@@ -15165,7 +15165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 3
   _closeCollidersCacheSize: 20
 --- !u!114 &988001610
 MonoBehaviour:
