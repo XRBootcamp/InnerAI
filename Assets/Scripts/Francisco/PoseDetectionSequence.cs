@@ -4,6 +4,7 @@ using Meta.WitAi.TTS.Utilities;
 using Meta.XR.Movement.BodyTrackingForFitness;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.Collections.Generic;
 
 public class PoseDetectionSequence : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class PoseDetectionSequence : MonoBehaviour
         "Well done! You've finished the sequence!",
         "Fantastic! You've completed the exercise sequence!",
     };
+    
+    [Header ("Screenshots for poses")] 
+    [SerializeField] private GameObject screenshotGallery; // My panel
+    [SerializeField] private UnityEngine.UI.Image[] screenshotImages; // Array of image components
+    private List<Texture2D> capturedScreenshots = new List<Texture2D>();
 
     
     private int currentPoseIndex;
@@ -114,6 +120,35 @@ public class PoseDetectionSequence : MonoBehaviour
             {
                 Debug.Log("No more poses in the sequence.");
             }
+        }
+    }
+    
+    private void CaptureScreenshot()
+    {
+        // Simple screen capture for Quest
+        StartCoroutine(CaptureScreenshotCoroutine());
+    }
+
+    private IEnumerator CaptureScreenshotCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+    
+        Texture2D screenshot = new Texture2D(200, 200, TextureFormat.RGB24, false);
+        screenshot.ReadPixels(new Rect(Screen.width/2 - 100, Screen.height/2 - 100, 200, 200), 0, 0);
+        screenshot.Apply();
+    
+        capturedScreenshots.Add(screenshot);
+    }
+    
+    private void ShowScreenshotGallery()
+    {
+        screenshotGallery.SetActive(true);
+    
+        for (int i = 0; i < capturedScreenshots.Count && i < screenshotImages.Length; i++)
+        {
+            Sprite sprite = Sprite.Create(capturedScreenshots[i], new Rect(0, 0, 200, 200), Vector2.one * 0.5f);
+            screenshotImages[i].sprite = sprite;
+            screenshotImages[i].gameObject.SetActive(true);
         }
     }
 
