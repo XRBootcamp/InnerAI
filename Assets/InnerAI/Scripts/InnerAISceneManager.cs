@@ -75,7 +75,7 @@ public class InnerAISceneManager : MonoBehaviour
             case SelectedExcercise.FifteenMinSweatWorkout:
                 break;
             case SelectedExcercise.FlamingKatana:
-                WorkoutScenesToSelectBySelectedTracking("FlamingKatanaWithMediaPipe", "FlamingKatanaWithMediaPipe");
+                WorkoutScenesToSelectBySelectedTracking("BasicScene", "FlamingKatanaWithMediaPipe");
                 break;
             case SelectedExcercise.SquatWorkout:
                 WorkoutScenesToSelectBySelectedTracking("Francisco_Movement_Squats", "Francisco_MediaPipe_Squats");
