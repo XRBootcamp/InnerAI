@@ -88,6 +88,16 @@ namespace PassthroughCameraSamples.CameraToWorld
             m_rayGo3.SetActive(!m_rayGo3.activeSelf);
             m_rayGo4.SetActive(!m_rayGo4.activeSelf);
         }
+
+        public void ToggleOnOffCameraMarkers(bool enabled)
+        {
+            m_headMarker.SetActive(enabled);
+            m_cameraMarker.SetActive(enabled);
+            m_rayGo1.SetActive(enabled);
+            m_rayGo2.SetActive(enabled);
+            m_rayGo3.SetActive(enabled);
+            m_rayGo4.SetActive(enabled);
+        }
         
         private void UpdateMarkerPoses()
         {

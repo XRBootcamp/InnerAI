@@ -10529,7 +10529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2555691040b8ee94083b811ca4bbe21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lagTime: 0.1
+  lagTime: 0.05
   controllerTransform: {fileID: 1471528573}
 --- !u!1 &1649039080
 GameObject:
@@ -14061,11 +14061,31 @@ PrefabInstance:
       objectReference: {fileID: 8101407269590139277, guid: c3ca3e2f2b8ebd2418c371f0d8fa25f6, type: 3}
     - target: {fileID: 4854035044496938716, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
       propertyPath: _landmarkRadius
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4854035044496938716, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
       propertyPath: _connectionWidth
-      value: 0.015
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854035044496938716, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
+      propertyPath: _leftLandmarkColor.b
+      value: 0.01999569
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854035044496938716, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
+      propertyPath: _leftLandmarkColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854035044496938716, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
+      propertyPath: _rightLandmarkColor.b
+      value: 0.01999569
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854035044496938716, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
+      propertyPath: _rightLandmarkColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854035044496938716, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
+      propertyPath: _rightLandmarkColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5987288207374909770, guid: af6f87c1f072d207e99065e4712f000d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14715,6 +14735,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6619645931713950669}
     m_Modifications:
+    - target: {fileID: 1748868316715821956, guid: abfaad578d05e4a09838223134c41c46, type: 3}
+      propertyPath: Eye
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7047676844597515174, guid: abfaad578d05e4a09838223134c41c46, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16646,7 +16670,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ...
+  m_Text: 
 --- !u!224 &8551065256386286299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16987,6 +17011,11 @@ MonoBehaviour:
   cameraRender: {fileID: 3718708018986067548}
   cameraToWorldCameraCanvas: {fileID: 8556043351748804496}
   cameraToWorldManager2: {fileID: 8463917184393227383}
+  mediaPipePoints: {fileID: 859755566829710623}
+  currentCameraMode: 0
+  currentControllerMode: 0
+  Quest3Controller: {fileID: 2050719541}
+  QuestProHandle: {fileID: 1634855490}
 --- !u!114 &8948916426715203688
 MonoBehaviour:
   m_ObjectHideFlags: 0

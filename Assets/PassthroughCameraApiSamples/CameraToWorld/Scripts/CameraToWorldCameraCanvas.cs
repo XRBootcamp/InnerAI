@@ -63,5 +63,10 @@ namespace PassthroughCameraSamples.CameraToWorld
         {
             m_debugText.enabled = !m_debugText.enabled;
         }
+
+        public void TurnOnOffDebugText(bool enabled)
+        {
+            m_debugText.enabled = enabled;
+        }
     }
 }

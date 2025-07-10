@@ -30,6 +30,11 @@ public class DelayedObjectFollowWithOffset : MonoBehaviour
 
     private Queue<TransformData> transformBuffer = new Queue<TransformData>();
 
+    public void SetLagTime(float newLagTime)
+    {
+        lagTime = newLagTime;
+    }
+
     private void Start()
     {
         localPositionOffset = transform.localPosition;
